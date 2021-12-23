@@ -1,0 +1,43 @@
+﻿@model ICourses.Entities.Module
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="title text-white">
+    <h1 class="h2 mb-3 font-weight-normal">@localizer["CreateLable"]</h1>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="control-label text-white"></div>
+            <div class="form-group">
+
+                <label asp-for="Name" class="control-label  text-white">@localizer["Name"]</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label text-white">@localizer["Description"]</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <label class="control-label text-white">@localizer["Image"]</label>
+            <input name="Image" type="file" class="form-control" />
+
+            <div class="form-group">
+                <input type="submit" value="@localizer["Create"]" class="button-active" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model ICourses.Roles.ViewModels.ChangeRoleViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+
+<h2 class="text-white">@localizer["Edith2"]  @Model.UserEmail</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" name="userId" value="@Model.UserId" />
+
+    <div class="form-group text-white">
+        @foreach (IdentityRole role in Model.AllRoles)
+        {
+            <input type="checkbox" name="roles" value="@role.Name"
+                   @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+            }
+    </div>
+    <button type="submit" class="btn btn-primary button-active">@localizer["Savebtn"]</button>
+</form>

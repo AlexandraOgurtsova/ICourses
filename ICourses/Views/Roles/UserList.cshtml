@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ICourses.Entities.User>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+
+
+
+<h2 class="text-white">@localizer["list"]</h2>
+<div>
+<table class="table">
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td class="text-white">@user.UserName</td>
+            @if ((User.IsInRole("admin")))
+           {
+                <td>
+                    <a class="btn btn-sm btn-primary button-active" asp-action="Edit" asp-route-userid="@user.Id">@localizer["Editbtn"]</a>
+                </td>
+                <td>
+                    @*<a class="btn btn-sm btn-primary" asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id">Редактировать профиль</a>
+                    <a class="btn btn-sm btn-primary" asp-controller="Users" asp-action="ChangePassword" asp-route-id="@user.Id">Сменить пароль</a>*@
+
+                    <form asp-controller="Users" asp-action="Delete" asp-route-id="@user.Id" method="post">
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            @localizer["Delete"]
+                        </button>
+                    </form>
+                </td>
+               }
+        </tr>
+     }
+</table>
+
+    </div>
+
+<div>
+    @if ((User.IsInRole("admin")) || (User.IsInRole("moderator")))
+    {
+    <a class="button-active" asp-action="Index">@localizer["btnRoles"]</a>
+     } 
+</div>

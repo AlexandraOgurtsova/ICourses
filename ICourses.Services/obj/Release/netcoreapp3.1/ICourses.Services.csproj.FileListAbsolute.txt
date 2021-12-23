@@ -1,0 +1,16 @@
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Services.deps.json
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Services.dll
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Services.pdb
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Entities.dll
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Interfaces.dll
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.ViewModels.dll
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Entities.pdb
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.Interfaces.pdb
+H:\ICourse-main\ICourses\ICourses.Services\bin\Release\netcoreapp3.1\ICourses.ViewModels.pdb
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.csprojAssemblyReference.cache
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.AssemblyInfoInputs.cache
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.AssemblyInfo.cs
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.csproj.CoreCompileInputs.cache
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.csproj.CopyComplete
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.dll
+H:\ICourse-main\ICourses\ICourses.Services\obj\Release\netcoreapp3.1\ICourses.Services.pdb

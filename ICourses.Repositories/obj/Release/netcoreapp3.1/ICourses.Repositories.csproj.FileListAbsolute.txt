@@ -1,0 +1,14 @@
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Repositories.deps.json
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Repositories.dll
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Repositories.pdb
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Entities.dll
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Interfaces.dll
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Entities.pdb
+H:\ICourse-main\ICourses\ICourses.Repositories\bin\Release\netcoreapp3.1\ICourses.Interfaces.pdb
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.csprojAssemblyReference.cache
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.AssemblyInfoInputs.cache
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.AssemblyInfo.cs
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.csproj.CoreCompileInputs.cache
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.csproj.CopyComplete
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.dll
+H:\ICourse-main\ICourses\ICourses.Repositories\obj\Release\netcoreapp3.1\ICourses.Repositories.pdb

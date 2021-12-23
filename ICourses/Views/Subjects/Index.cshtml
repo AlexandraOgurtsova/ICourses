@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ICourses.Entities.Subject>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Списки Предметов";
+}
+
+
+<section class="third">
+    <div class="container">
+        <div class="team">
+            <div class="why-text text-white text-md-center">
+
+                <h3 class="text-success">@localizer["list"]</h3>
+
+            </div>
+            <div class="team-content">
+                <div class="team-cards">
+                    @foreach (var m in Model)
+                    {
+        @if (User.IsInRole("admin"))
+        {
+
+        <div class="team-card revealator-slideleft revealator-delay1">
+            <div class="team-card-text">
+
+                <h2 class="text-lg-center">@Html.DisplayFor(modelItem => m.Name)</h2>
+                <div class="team-card-links">
+                    <p style="margin-left:10%">@Html.DisplayFor(modelItem => m.Description)</p>
+                </div>
+                <div  class="team-card-links">
+                    <a style="margin-left:10%" class="button-active" asp-controller="Subjects" asp-action="Details" asp-route-id="@m.Id">
+                        @localizer["DetailCourse"]
+                    </a>
+
+                </div>
+                <form style="margin-left:10%; width:200px" asp-controller="Subjects" asp-action="Delete" asp-route-id="@m.Id" method="post">
+                    <button style="width:135px; color:white; background-color:crimson" type="submit" class="button-active">
+                        @localizer["Delete"]
+                    </button>
+                </form>
+            </div>
+        </div>}
+    else
+    {
+        <div class="team-card revealator-slideleft revealator-delay1">
+            <div class="team-card-text">
+
+                <h2 class="text-lg-center">@Html.DisplayFor(modelItem => m.Name)</h2>
+                <div class="team-card-links">
+                    <p>@Html.DisplayFor(modelItem => m.Description)</p>
+                </div>
+                <div class="team-card-links">
+                    <a style="margin-left:10%" class="button-active revealator-slideup revealator-delay3 nav" asp-controller="Subjects" asp-action="Details" asp-route-id="@m.Id">
+                        @localizer["DetailCourse"]
+                    </a>
+                </div>
+
+            </div>
+        </div>}}
+
+                </div>
+            </div>
+            <br>
+            <br>
+
+            @if (User.IsInRole("admin"))
+            {
+        <p>
+            <a class="button-active revealator-slideup revealator-delay3 nav" asp-action="Create">
+                @localizer["CreateNew"]
+            </a>
+        </p>}
+        </div>
+</section>
+

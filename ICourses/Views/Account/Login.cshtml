@@ -1,0 +1,45 @@
+﻿@model ICourses.Users.ViewModels.LoginViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+    <head> 
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <style>
+            .form-signin {
+                width: 100%;
+                max-width: 330px;
+                padding: 15px;
+                margin: auto;
+            }
+        </style>
+    </head>
+
+
+<div class="title text-white">
+    <h1 class="h2 mb-3 font-weight-normal">@localizer["text"]</h1>
+</div>
+<form method="post" asp-controller="Account" asp-action="Login"
+      asp-route-returnUrl="@Model.ReturnUrl">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Login" class="control-label text-white">@localizer["Login"]</label><br />
+        <input asp-for="Login" />
+        <span asp-validation-for="Login"></span>
+    </div>
+    <div>
+        <label asp-for="Password" class="control-label text-white">@localizer["Password"] </label><br />
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="RememberMe" class="control-label text-white">@localizer["RememberMe"] </label><br />
+        <input asp-for="RememberMe" />
+    </div>
+    <div>
+        <input type="submit" value="@localizer["sing"]" class="button active" />
+    </div>
+    @*<div>
+        <a class="text-muted" asp-controller="Account" asp-action="ForgotPassword">@localizer["ForgotPassword"]?</a>
+    </div>*@
+</form>
+
+

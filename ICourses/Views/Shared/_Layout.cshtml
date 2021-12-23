@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ICourses</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/media.css">
+    <link rel="stylesheet" href="~/css/fm.revealator.jquery.min.css">
+    <link rel="stylesheet" href="~/css/vegas.min.css">
+</head>
+
+<body>
+ 
+    <nav class="navbar navbar-expand-md ">
+        <div class="header-fixed">
+            <div class="header">
+                <div class="header__logo">
+                    <a asp-controller="Home" asp-action="Index">
+                        <span>I<span>Courses</span></span>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-md-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">@localizer["Main"]</a>
+                        </li>
+
+                        <li class="active">
+                            <a class="nav-link" role="button" asp-controller="Subjects" asp-action="Index">@localizer["Sub"]</a>
+                        </li>
+                        <li>
+                            @await Html.PartialAsync("_SelectLanguagePartial")
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li>
+                                    <a a class="nav-link" asp-controller="Roles" asp-action="Index">@localizer["ListRoles"]</a>
+                                </li>
+                            }
+                            <li>
+                                <a class="nav-link" asp-controller="Chat" asp-action="Chat">@localizer["Chat"]</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" asp-controller="Account" asp-action="Profile">@localizer["Hello"] @User.Identity.Name</a>
+                            </li>
+                            <li>
+                                <form method="post" asp-controller="Account" asp-action="Logout">
+                                    <button type="submit" class="btn btn-light center-block">
+                                        <span class="glyphicon glyphicon-log-out"></span>
+                                        @localizer["Logout"]
+                                    </button>
+                                </form>
+                            </li>
+                            <li>
+                                <form method="post" asp-controller="Courses" asp-action="GetFound">
+                                    <div>
+                                        
+                                        <input style="width:70px" name="name"/>
+                                        <input type="submit" value="Search" class="btn btn-sm btn-outline-secondary" />
+                                    </div>
+                                </form>
+                            </li>
+                            
+                        }
+                        else
+                        {
+                            <li class="nav">
+                                <a class="nav-link" asp-controller="Account" asp-action="Login">@localizer["Login"]</a>
+                            </li>
+
+                            <li class="nav">
+                                <a class="nav-link" asp-controller="Account" asp-action="Register">@localizer["Registr"]</a>
+                            </li>
+                            <li>
+                                <form method="post" asp-controller="Courses" asp-action="GetFound">
+                                    <div>
+                                        
+                                        <input style="width:100px" name="name" />
+                                        <input type="submit" value="Search" class="btn btn-sm btn-outline-secondary" />
+                                    </div>
+                                </form>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        <div class="container m-5 bg-gradient-light">
+            <div class="container m-5 pb-4  bg-gradient-light">
+
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - ICourses - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/fm.revealator.jquery.min.js"></script>
+        <script src="~/js/vegas.min.js"></script>
+        <script src="~/js/isotope.pkgd.min.js"></script>
+        <script src="~/js/parallax-mouse.js"></script>
+        <script src="~/js/main.js"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
